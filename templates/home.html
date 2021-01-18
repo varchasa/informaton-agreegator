@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<form action="{{ url_for('news') }}" method="POST">
+<button name='news' value='news'>News</button>
+{% for i in range(0,10) %}
+	{% for j in range(0,10) %}
+	{% if i==j %}
+	<h3>{{title[i]}}</h3>
+	<a href="{{link[j]}}" target="_blank">Click here</a>
+{% endif %}
+{% endfor %}
+{% endfor %}
+
+</body>
+</html>
