@@ -1,4 +1,4 @@
-# content-agreegator
+# Information - Agreegator
 
 ## I have a build a content agreegator using python which collects some information about news, articles,etc. from all over the web using rss feeds. 
 
