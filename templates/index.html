@@ -16,6 +16,96 @@
         <link rel="stylesheet" href="css/style.css">
       
         <title></title>
+
+<style>
+    
+    /* The device with borders */
+.smartphone {
+  position: relative;
+  width: 400px;
+  height: 650px;
+  margin: auto;
+  border: 16px black solid;
+  border-top-width: 60px;
+  border-bottom-width: 60px;
+  border-radius: 36px;
+}
+
+/* The horizontal line on the top of the device */
+.smartphone:before {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 5px;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #333;
+  border-radius: 10px;
+}
+
+/* The circle on the bottom of the device */
+.smartphone:after {
+  content: '';
+  display: block;
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  left: 50%;
+  bottom: -65px;
+  transform: translate(-50%, -50%);
+  background: #333;
+  border-radius: 50%;
+}
+
+/* The screen (or content) of the device */
+.smartphone .content {
+  width: 370px;
+  height: 530px;
+  background:#ffe6ca;
+} 
+
+.smartphone .content-software {
+  width: 370px;
+  height: 530px;
+  background:#d8ebe4;
+} 
+.smartphone .content-lifestyle {
+  width: 370px;
+  height: 530px;
+  background:#ccffbd;
+}
+
+.smartphone .content-tech {
+  width: 370px;
+  height: 530px;
+  background:#f0e4d7;
+}
+
+#button-color
+{
+  background-color:#cdc733 !important;
+}
+#button-color-software
+{
+  background-color:#8f4f4f !important;
+}
+#button-color-life
+{
+  background-color: #40394a !important;
+}
+#button-color-tech
+{
+  background-color:#ff7171 !important;
+}
+h3
+{
+  font-family: Yatra One;
+}
+
+    </style>
+        
     </head>
     <body>
       <center>
@@ -29,13 +119,112 @@
             </p>
           </div></center>
 
-          <div>
-            <p>
-            <img src='../static/img/news.jpg' style="width: 250px;height: 250px;margin-right: 30px;float: right;">
-            From this point you can see all the aspects of latest news like sports news, science news, crime news, etc.
-            according to your prefrence and interest level. 
-            </p>
-          </div>
+          
+<center>
+
+<div class="row">
+  <div class ="col-sm-6">
+<div class="smartphone">
+  <div class="content">
+    <img src="../static/img/news2.png" style="height: 120px;width: 120px;"><br>
+    <h3>NEWS</h3>
+    <form action="{{ url_for('toi') }}" method="POST" target="_blank">
+      
+    <button class="btn btn-secondary" id="button-color">GENERAL</button><br><br></form>
+    
+    
+    <form action="{{url_for('sport')}}" method="POST" target="_blank">
+    <button class="btn btn-secondary" id="button-color">SPORTS</button><br><br></form>
+
+    <form action="{{url_for('education')}}" method="POST" target="_blank">
+    <button class="btn btn-secondary" id="button-color">EDUCATION</button><br><br></form>
+
+    <form action="{{url_for('world')}}" method="POST" target="_blank">
+    <button class="btn btn-secondary" id="button-color">WORLD</button><br><br></form>
+
+    <form action="{{url_for('tech')}}" method="POST" target="_blank">
+    <button class="btn btn-secondary" id="button-color">TECHNOLOGY</button></form>
+
+    
+  </div>
+</div>
+</div>
+
+<div class ="col-sm-6">
+  <div class="smartphone">
+    <div class="content-software">
+      <img src="../static/img/software.png" style="height: 120px;width: 120px;"><br>
+      <h3>SOFTWARE DEVELOPMENT</h3>
+      <form action="{{ url_for('programming') }}" method="POST" target="_blank">
+      <button class="btn btn-secondary" id="button-color-software">PROGRAMMING</button><br><br></form>
+      <form action="{{ url_for('techCode') }}" method="POST" target="_blank">
+      <button class="btn btn-secondary" id="button-color-software">CODE</button><br><br></form>
+      <form action="{{ url_for('techLanguage') }}" method="POST" target="_blank">
+      <button class="btn btn-secondary" id="button-color-software">LANGUAGE</button><br><br></form>
+      <form action="{{ url_for('technology') }}" method="POST" target="_blank">
+      <button class="btn btn-secondary" id="button-color-software">TECHNOLOGY</button><br><br></form>
+      <form action="{{ url_for('testing') }}" method="POST" target="_blank">
+      <button class="btn btn-secondary" id="button-color-software">TESTING</button></form>
+    </div>
+  </div>
+  </div>
+</div>
+
+<br><br>
+
+<div class="row">
+  <div class ="col-sm-6">
+    <div class="smartphone">
+      <div class="content-lifestyle">
+        <img src="../static/img/lifestyle.png" style="height: 120px;width: 120px;"><br>
+        <h3>LIFESTYLE</h3>
+        <form action="{{ url_for('health') }}" method="POST" target="_blank">
+        <button class="btn btn-secondary" id="button-color-life">HEALTH</button><br><br></form>
+
+        <form action="{{ url_for('exercise') }}" method="POST" target="_blank">
+        <button class="btn btn-secondary" id="button-color-life">EXERCISE</button><br><br></form>
+
+        <form action="{{ url_for('yoga') }}" method="POST" target="_blank">
+        <button class="btn btn-secondary" id="button-color-life">YOGA</button><br><br></form>
+
+        <form action="{{ url_for('fashion') }}" method="POST" target="_blank">
+        <button class="btn btn-secondary" id="button-color-life">FASHION</button><br><br></form>
+
+        <form action="{{ url_for('meditation') }}" method="POST" target="_blank">
+        <button class="btn btn-secondary" id="button-color-life">MEDITATION</button></form>
+      </div>
+    </div>
+    </div>
+  
+    <div class ="col-sm-6">
+      <div class="smartphone">
+        <div class="content-tech">
+          <img src="../static/img/tech.jpg" style="height: 120px;width: 120px;"><br>
+          <h3>TECHNOLOGY</h3>
+          <form action="{{ url_for('ai') }}" method="POST" target="_blank">
+          <button class="btn btn-secondary" id="button-color-tech">ARTIFICIAL INTELLIGENCE</button><br><br></form>
+
+          <form action="{{ url_for('bigdata') }}" method="POST" target="_blank">
+          <button class="btn btn-secondary" id="button-color-tech">BIG DATA</button><br><br></form>
+  
+          <form action="{{ url_for('cloud') }}" method="POST" target="_blank">
+          <button class="btn btn-secondary" id="button-color-tech">CLOUD COMPUTING</button><br><br></form>
+  
+          <form action="{{ url_for('blockchain') }}" method="POST" target="_blank">
+          <button class="btn btn-secondary" id="button-color-tech">BLOCKCHAIN</button><br><br></form>
+  
+          <form action="{{ url_for('cyber') }}" method="POST" target="_blank">
+          <button class="btn btn-secondary" id="button-color-tech">CYBER SECURITY</button></form>
+        </div>
+      </div>
+      </div>
+
+  </div>
+
+
+  </center>
+
+
     </body>
     
 </html>
